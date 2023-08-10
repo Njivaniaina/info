@@ -29,7 +29,7 @@ void tri(char texte[256][256], int l);
 void trier_nom(Personne *olona, int n);
 void trier_prenom(Personne *olona, int n);
 void copier_pc(Pc *copie, Pc Acopie);
-Pc *tri_num_mac(Pc *pc, int n);
+void tri_num_mac(Pc *pc, Pc pc1, int n, int isa);
 int principal();
 
 #endif

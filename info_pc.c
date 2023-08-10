@@ -106,30 +106,28 @@ void copier_pc(Pc *copie, Pc Acopie){
 	strcpy(copie->marque, Acopie.marque);
 }
 
-Pc *tri_num_mac(Pc *pc, int n){
-	Pc *tmp;
-	tmp = (Pc*)malloc(sizeof(Pc)*n);
-
-	for(int i=0;i<46;i++){
-		strcpy(tmp[i].mac, "");
-		strcpy(tmp[i].marque, "");
+void tri_num_mac(Pc *pc, Pc *pc1, int n,int isa){
+	for(int i=0;i<isa;i++){
+		strcpy(pc1[i].mac, "\0");
+		strcpy(pc1[i].marque, "\0");
+		strcpy(pc1[i].nom, "\0");
+		pc1[i].numero=0;
 	}
 
 	for(int i=0;i<n;i++){
-		for(int j=0;j<46;j++){
+		for(int j=0;j<isa;j++){
 			if(pc[i].numero == j){
-				copier_pc(&tmp[j], pc[i]);
+				copier_pc(&pc1[j], pc[i]);
 			}
 		}
 	}
-	return tmp;
 }
 
 int principal(){
-	char teny[256][256];
+	char teny[256][500];
 	Personne olona[46];
 	Pc pc[46];
-	Pc *ordi;
+	Pc ordi[46];
 	FILE *info;
 	int n=0, isa=0;
 
@@ -155,7 +153,7 @@ int principal(){
 		}
 		fclose(info);
 	}
-	
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
 	Ity dia fakana fotsiny ilay ao anatin'ilay 'fichier' mombamomba an'ny mac
@@ -169,7 +167,7 @@ int principal(){
 	}
 	else{
 		while (fgets(teny[n], 256, info) != NULL){
-			sscanf(teny[n], "%[^|]|%[^-]-%d|%[^\n]", pc[n].mac, pc[n].nom, &pc[n].numero, pc[n].marque);
+			sscanf(teny[n], "%[^,],%[^-]-%d,%[^\n]", pc[n].mac, pc[n].nom, &pc[n].numero, pc[n].marque);
 			n++;
 		}
 		fclose(info);
@@ -182,7 +180,7 @@ int principal(){
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	trier_nom(olona, isa);  //Mandahatra ny anaran'ireo olona fotsiny 
-	ordi = tri_num_mac(pc, n);
+	tri_num_mac(pc, ordi, n, isa);
 
 	info = fopen("information.csv", "w");
 	if( info == NULL ){
@@ -190,8 +188,8 @@ int principal(){
 	}
 	else{
 		fprintf(info, "Nom,Prénom,Numero,Téléphone,E-mail,Andresse,Date de naissance,Lieu de naissance,Date de bacc,Genre,CIN,url\n");
-		for(int i=0; i<41 ; i++){
-			fprintf(info, "%s,%s,%d,%s,%s,%s,%s,%s,%d,%s,%s,%s\n", olona[i].nom, olona[i].prenom, i+1, olona[i].tel, olona[i].email, olona[i].adresse, olona[i].naissance, olona[i].lieu, olona[i].bacc, olona[i].genre, olona[i].cin, olona[i].url);
+		for(int i=0; i<isa ; i++){
+			fprintf(info, "%s,%s,%d,%s,%s,%s,%s,%s,%d,%s,%s,%s,%s,%s\n", olona[i].nom, olona[i].prenom, i+1, olona[i].tel, olona[i].email, olona[i].adresse, olona[i].naissance, olona[i].lieu, olona[i].bacc, olona[i].genre, olona[i].cin, olona[i].url, ordi[i].mac, ordi[i].marque);
 		}
 		fclose(info);
 	}
