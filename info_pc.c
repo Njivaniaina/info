@@ -155,6 +155,7 @@ int principal(){
 		}
 		fclose(info);
 	}
+	
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
 	Ity dia fakana fotsiny ilay ao anatin'ilay 'fichier' mombamomba an'ny mac
@@ -167,7 +168,6 @@ int principal(){
 		printf("Il y a une erreur pendant l'ouverture du fichier!!!");
 	}
 	else{
-		fgets(teny[0], 256, info);
 		while (fgets(teny[n], 256, info) != NULL){
 			sscanf(teny[n], "%[^|]|%[^-]-%d|%[^\n]", pc[n].mac, pc[n].nom, &pc[n].numero, pc[n].marque);
 			n++;
@@ -184,18 +184,14 @@ int principal(){
 	trier_nom(olona, isa);  //Mandahatra ny anaran'ireo olona fotsiny 
 	ordi = tri_num_mac(pc, n);
 
-	for(int i=0;i<isa;i++){
-		printf("%s\t%s\n", ordi[i].mac, ordi[i].marque);
-	}
-
 	info = fopen("information.csv", "w");
 	if( info == NULL ){
 		printf("Il y a une erreur pendant l'ouverture du fichier!!!");
 	}
 	else{
-		fprintf(info, "Nom,Prénom,Numero,Téléphone,E-mail,Andresse,Date de naissance,Lieu de naissance,Date de bacc,Genre,CIN,MAC du PC,Marque du pc,url\n");
-		for(int i=0; i<isa ; i++){
-			fprintf(info, "%s,%s,%d,%s,%s,%s,%s,%s,%d,%s,%s,%s,%s,%s\n", olona[i].nom, olona[i].prenom, i+1, olona[i].tel, olona[i].email, olona[i].adresse, olona[i].naissance, olona[i].lieu, olona[i].bacc, olona[i].genre, olona[i].cin, ordi[i].mac, ordi[i].marque, olona[i].url);
+		fprintf(info, "Nom,Prénom,Numero,Téléphone,E-mail,Andresse,Date de naissance,Lieu de naissance,Date de bacc,Genre,CIN,url\n");
+		for(int i=0; i<41 ; i++){
+			fprintf(info, "%s,%s,%d,%s,%s,%s,%s,%s,%d,%s,%s,%s\n", olona[i].nom, olona[i].prenom, i+1, olona[i].tel, olona[i].email, olona[i].adresse, olona[i].naissance, olona[i].lieu, olona[i].bacc, olona[i].genre, olona[i].cin, olona[i].url);
 		}
 		fclose(info);
 	}
