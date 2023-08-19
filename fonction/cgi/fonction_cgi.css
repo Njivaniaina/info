@@ -1,0 +1,70 @@
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	background: gray;
+}
+
+body h1{
+	text-align: center;
+	color: green;
+}
+
+body p{	
+	font-size: 20px;
+	text-align: center;
+	padding: 10px;
+}
+
+body form{
+	display: flex;
+	flex-direction: column;
+	border-radius: 10px;
+	height: 150px;
+	width: 30vw;
+	padding: 20px;
+	margin: 10px;
+	background: blue;
+}
+
+body form label{
+	font-size: 18px;
+	text-align: center;
+}
+
+body form input{
+	width: 30vw;
+	height: 40px;
+	border-radius: 2Opx;
+}
+
+body form input[type=submit]{
+	margin: 5px;
+	background: gray;
+	width: 10vw;
+	height: 40px;  
+}
+
+body table{
+	border-radius: 10px;
+	border: 2px solid black;
+}
+
+body table .tete td {
+	border: 3px solid black;
+	background: black;
+	color: white;
+}
+
+body table tr td{
+	border-radius: 10px;
+	border: 2px solid black;
+	background: green;
+}
+
+body table .final td{
+	border-radius: 10px;
+	border: 2px solid black;
+	background: red;
+}
