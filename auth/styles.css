@@ -11,7 +11,12 @@
 }
 
 body {
-    background: green;
+    background: rgb(53, 96, 238);
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
 }
 
 header {
@@ -65,6 +70,10 @@ header .navigation .menu a:hover:before{
     width: 100%;
 }
 
+/*
+    Ho an'ilay fandraisana voalohany.
+*/
+
 .home {
     z-index: 888;
     margin: 200px; 
@@ -108,6 +117,10 @@ header .navigation .menu a:hover:before{
     width: 100vw;
     box-sizing: border-box;
 }
+
+/*
+    Ho an'ilay formulaire
+*/
 
 .formulaire1{
     display: flex;
@@ -156,4 +169,140 @@ header .navigation .menu a:hover:before{
     border-radius: 15px;
     border-bottom: 2px solid black;
     background: blue;
+}
+
+.valiny{
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: gray;
+    border-radius: 10px;
+    height: 300px;
+    width: 350px;
+    box-shadow: 5px 5px black;
+}
+
+.valiny h1{
+    text-align: center;
+    color: white;
+    padding: 5px;
+    margin-bottom: 50px;
+    font-weight: 900;
+    font-size: 50px;
+    
+}
+
+.valiny p{
+    text-align: center;
+}
+ .valiny a{
+    text-decoration: none;
+    text-align: center;
+    height: 40px;
+    width: 100px;
+    margin-top: 10px;
+    padding-top: 5px;
+    margin-left: 130px;
+    color: black;
+    background: blue;
+    border: 2px solid black;
+    border-radius: 10px;
+ }
+
+/*
+    Hoa an'ilay tabialo mitahiry ilay ao amin'ny auth.log
+*/
+
+.Contenu_auth {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.Contenu_auth form{
+    height: 40px;
+    width: 405px;
+    border-radius: 10px;
+    background: gray;
+}
+
+.Contenu_auth form .cherche{
+    padding: 0;
+    margin: 0;
+    height: 40px;
+    width: 300px;
+    border-radius: 10px 0 0 10px ;
+    background: transparent;
+}
+
+.Contenu_auth form .boutton{
+    height: 40px;
+    width: 100px;
+    padding: 0;
+    margin: 0;
+    border-radius: 0 10px 10px 0 ;
+    background: transparent;
+}
+
+.Contenu_auth table{
+    margin-top: 10px;
+    height: 450px;
+    width: 80vw;
+    background: black;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.Contenu_auth table td{
+    margin: 0;
+    border: 2px solid black;
+}
+
+.Contenu_auth table .tete td{
+    border-radius: 3px;
+    background: rgb(180, 175, 175);
+}
+
+.Contenu_auth table .mivoha td{
+    background: rgb(22, 194, 73);
+}
+
+.Contenu_auth table .mihidy td{
+    background: rgb(233, 81, 81);
+}
+
+.Contenu_auth .pejy{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.Contenu_auth .page{
+    margin: 5px;
+    margin-top: 20px;
+    background: blue;
+    text-decoration: none;
+    height: 50px;
+    width: 50px;
+    border-radius: 15px;
+    color: black;
+    text-align: center;
+}
+
+.Contenu_auth .page1{
+    margin: 5px;
+    margin-top: 20px;
+    background: rgb(51, 255, 0);
+    text-decoration: none;
+    height: 50px;
+    width: 50px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.Contenu_auth .page a, .Contenu_auth .page1 a{
+    text-decoration: none;
+    color: black;
+    padding-top: 20px;
 }

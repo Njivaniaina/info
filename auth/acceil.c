@@ -7,7 +7,7 @@
 int main(){
 
     miala();
-    manomboka_cgi("html", "style.css");
+    manomboka_cgi("html", "styles.css");
     if(ao_ve()){
         bar_abony_ao();
         lesona();

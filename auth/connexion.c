@@ -8,7 +8,7 @@ int main(){
     Olona user={"", "", ""};
 
     miala();
-    manomboka_cgi("html", "style.css");
+    manomboka_cgi("html", "styles.css");
     if(ao_ve()){
         bar_abony_ao();
         printf("En ligne");

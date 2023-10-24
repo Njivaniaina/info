@@ -31,4 +31,23 @@ int maka_olona_misy(FILE *fichier, Olona *u, int n);
 int manoratra(FILE *fichier, Olona user);
 void tsy_voaray(char *diso);
 
+
+//Hoan'ilay efa tafiditra ilay olona
+
+typedef struct {
+    char date[256];
+    char time[256];
+    char session[256];
+    char user[256];
+}   User ;
+
+int manisa_andalana_hafa(FILE *fichier);
+User *maka(long *n);
+int mitady_ve(User *u, User *v, long *n, char *tadiavina);
+void fitadiavana();
+int laharany_pejy();
+void mampiseho(User *user, long n, long a, long b, char *tadiavina);
+char *daty(char *date);
+
+
 #endif
