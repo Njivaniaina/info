@@ -10,7 +10,7 @@
 int main(){
     long double a=1, b=100;
 
-    manomboka_cgi("Solution d'une foction.\n");
+    manomboka_cgi("Calcule d'integral.\n");
     maka_a_b_cgi();
     if(misy_a_b(&a,&b)){
         mamoaka_valiny(a,b);
@@ -41,7 +41,7 @@ void mamoaka_valiny(long double a, long double b){
         manokatra_tabilao();
         tmp = a;
         while(a <= b){
-            sum += (f(a)*eps);
+            sum += (f(a)*eps) + (eps*(f(a+eps)-f(a)));
             a = a+eps;
             printf("<tr><td>%i</td><td>%Lf</td><td>[ %Lf ; %Lf ]</td></tr>\n", i, sum, tmp, a);
             i++;
